@@ -1,0 +1,21 @@
+.left-side{
+	width:200px;
+	float:left;
+	padding:10px;
+}
+.profile-container{
+	padding:10px;
+}
+.profile-name{
+	font-size:25px;
+}
+.profile-image{
+	height:160px;
+}
+.right-side{
+	width:600px;
+	float:right;
+}
+.books-table{
+	padding-left:30px;
+}

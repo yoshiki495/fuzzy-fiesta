@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'  %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="application.css">
+  </head>
+
+  <body>
+    <header>
+     <h4 class="headline">Bookers</h4>
+     <nev>
+        <ul class="nav-list">
+          <% if user_signed_in? %>
+            <li class="nav-list-item"><%= link_to "Home", '/users/mypage' %></li>
+            <li class="nav-list-item"><%= link_to "Users", users_path  %></li>
+            <li class="nav-list-item"><%= link_to "Books", books_path %></li>
+            <li class="nav-list-item"><%= link_to "log out", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li class="nav-list-item"><%= link_to "Home", '/' %></li>
+            <li class="nav-list-item"><%= link_to "About", '/home/about'  %></li>
+            <li class="nav-list-item"><%= link_to "Sign up", '/users/sign_up' %></li>
+            <li class="nav-list-item"><%= link_to "log in", '/users/sign_in' %></li>
+          <% end %>
+        </ul>
+    </nev>
+    </header>
+    <main>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <%= yield %>
+    </main>
+  </body>
+</html>
+

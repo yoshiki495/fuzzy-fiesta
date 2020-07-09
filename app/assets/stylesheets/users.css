@@ -1,0 +1,11 @@
+.users-table{
+	width:500px;
+	padding:30px;
+}
+.users-table th{
+	width:250px;
+}
+.users-table td{
+    width:250px;
+    text-align:center;
+}

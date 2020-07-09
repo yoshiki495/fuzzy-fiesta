@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="users.css">
+
+
+<h1 class="users">Users</h1>
+
+
+<table class="users-table">
+  <tr>
+    <th>image</th>
+    <th>name</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <% if user.profile_image.present? %>
+          <%= attachment_image_tag user, :profile_image,:fill, 40, 40, format: "jpg" %>
+        <% else %>
+          <img src="/assets//no_image.jpg" style="height:40px">
+        <% end %>
+      </td>
+      <td>
+        <%= link_to(user.name, "/users/#{user.id}") %>
+      </td>
+    </tr>
+  <% end %>
+</div>
+

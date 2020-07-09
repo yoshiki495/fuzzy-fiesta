@@ -1,0 +1,11 @@
+<div class="detail-content">
+	<h1>Book detail</h1>
+	<p class="single-text">
+		<%= @book.title %>
+	    <%= @book.body %>
+    	<% if current_user.id == @book.user_id %>
+		     <%= link_to "Edit", edit_book_path(@book) %>
+			 <%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: '削除しますか？' }%>
+		<% end %>
+	</p>
+</div>

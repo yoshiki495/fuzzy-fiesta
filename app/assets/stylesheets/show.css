@@ -1,0 +1,17 @@
+.left-side{
+	width:200px;
+	float:left;
+	padding:10px;
+}
+.profile-container{
+	padding:10px;
+}
+.profile-name{
+	font-size:25px;
+}
+.right-side{
+	width:70%;
+}
+.books-table th{
+	padding-right:70px;
+}
